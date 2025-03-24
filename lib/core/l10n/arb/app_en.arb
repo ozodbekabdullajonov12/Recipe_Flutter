@@ -1,0 +1,19 @@
+{
+  "signUp": "Sign up",
+  "name": "Name",
+  "surname": "Surname",
+  "username": "Username",
+  "email": "Email",
+  "mobileNumber": "Mobile Number",
+  "dateOfBirth": "Date of birth",
+  "password": "Password",
+  "confirmPassword": "Confirm password",
+  "already": "Already have an account?",
+  "login": "Log In",
+  "loginHintText": "Log In",
+  "forgotPassword": "Forgot Password?",
+  "orSign": "Or sign up with",
+  "dontAccount": "Don't have an account? Sign Up",
+  "signUpContinue": "By continuing, you agree to ",
+  "signUpTerm": "Terms of Use and Privacy Policy."
+}

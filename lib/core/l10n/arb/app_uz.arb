@@ -1,0 +1,19 @@
+{
+  "signUp": "Ro'yhatdan o'tish",
+  "name": "Ism",
+  "surname": "Familiya",
+  "username": "Foydalanuvchi nomi",
+  "email": "Elektron pochta",
+  "mobileNumber": "Telefon raqam",
+  "dateOfBirth": "Tug'ilgan sana",
+  "password": "Parol",
+  "confirmPassword": "Parolni qayta kiriting",
+  "already": "Allaqachon shaxsiy hisobga egamisiz",
+  "login": "Hisobga kirish",
+  "loginHintText": "Elektron pochta,telefon raqam,username",
+  "forgotPassword": "Parolni unutdizmi?",
+  "orSign": "Yoki quyidagilar bilan shaxsiy hisobga kirish",
+  "signUpContinue": "Davom etishni xohlasangiz quyidagilarga rozi bo'lasiz ",
+  "dontAccount": "Shaxsiy hisobga ega emasmisiz? Ro'yhatdan o'tish",
+  "signUpTerm": "Foydalanish shartlari va Maxfiylik siyosati."
+}
