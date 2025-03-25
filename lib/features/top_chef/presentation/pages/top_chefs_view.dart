@@ -20,14 +20,14 @@ class TopChefsView extends StatelessWidget {
         title: "Top Chef",
         actions: [
           RecipeIconButtonContainer(
-            image: "assets/icons/notification.svg",
+            image: "assets/svg/notification.svg",
             iconWidth: 14,
             iconHeight: 19,
             callback: () {},
           ),
           SizedBox(width: 5),
           RecipeIconButtonContainer(
-            image: "assets/icons/search.svg",
+            image: "assets/svg/search.svg",
             iconWidth: 12,
             iconHeight: 18,
             callback: () {},
@@ -73,7 +73,6 @@ class TopChefsView extends StatelessWidget {
               height: 285.h,
               padding: EdgeInsets.symmetric(horizontal: 36.w, vertical: 9.h),
               decoration: BoxDecoration(
-                color: AppColors.redPinkMain,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
@@ -87,7 +86,7 @@ class TopChefsView extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 13,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -102,7 +101,6 @@ class TopChefsView extends StatelessWidget {
               height: 285.h,
               padding: EdgeInsets.symmetric(horizontal: 36.w, vertical: 9.h),
               decoration: BoxDecoration(
-                color: AppColors.redPinkMain,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
@@ -116,6 +114,7 @@ class TopChefsView extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                  SizedBox(height: 13,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [

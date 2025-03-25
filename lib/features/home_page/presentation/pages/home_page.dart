@@ -12,6 +12,7 @@ import 'package:recipe_app/features/home_page/presentation/widgets/home_page_app
 import 'package:recipe_app/features/home_page/presentation/widgets/home_page_label_text.dart';
 import 'package:recipe_app/features/home_page/presentation/widgets/trending_recipe.dart';
 
+import '../../../../core/routing/routes.dart';
 import '../widgets/home_my_recipes.dart';
 
 class HomePage extends StatelessWidget {
@@ -87,14 +88,17 @@ class HomePage extends StatelessWidget {
                       SizedBox(
                         height: 7,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          HomeChef(chef: vm.chefs[0]),
-                          HomeChef(chef: vm.chefs[1]),
-                          HomeChef(chef: vm.chefs[2]),
-                          HomeChef(chef: vm.chefs[3])
-                        ],
+                      GestureDetector(
+                        onTap: () => context.push(Routes.topChef),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            HomeChef(chef: vm.chefs[0]),
+                            HomeChef(chef: vm.chefs[1]),
+                            HomeChef(chef: vm.chefs[2]),
+                            HomeChef(chef: vm.chefs[3])
+                          ],
+                        ),
                       )
                     ],
                   ),
