@@ -20,14 +20,14 @@ class TopChefsView extends StatelessWidget {
         title: "Top Chef",
         actions: [
           RecipeIconButtonContainer(
-            image: "assets/icons/notification.svg",
+            image: "assets/svg/notification.svg",
             iconWidth: 14,
             iconHeight: 19,
             callback: () {},
           ),
           SizedBox(width: 5),
           RecipeIconButtonContainer(
-            image: "assets/icons/search.svg",
+            image: "assets/svg/search.svg",
             iconWidth: 12,
             iconHeight: 18,
             callback: () {},
