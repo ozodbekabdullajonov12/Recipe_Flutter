@@ -66,12 +66,15 @@ class HomePage extends StatelessWidget {
                           fontSize: 15,
                         ),
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          HomeMyRecipes(recipeSmallModel: vm.myRecipes[0]),
-                          HomeMyRecipes(recipeSmallModel: vm.myRecipes[1])
-                        ],
+                      GestureDetector(
+                        onTap: () => context.push(Routes.yourRecipes),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            HomeMyRecipes(recipeSmallModel: vm.myRecipes[0]),
+                            HomeMyRecipes(recipeSmallModel: vm.myRecipes[1])
+                          ],
+                        ),
                       )
                     ],
                   ),

@@ -14,6 +14,8 @@ import 'package:recipe_app/features/reviews/presentation/manager/create_review_b
 import 'package:recipe_app/features/reviews/presentation/manager/reviews_bloc.dart';
 import 'package:recipe_app/features/reviews/presentation/pages/create_review_view.dart';
 import 'package:recipe_app/features/reviews/presentation/pages/reviews_page.dart';
+import 'package:recipe_app/features/your_recipes/presentation/manager/your_recipes_bloc.dart';
+import 'package:recipe_app/features/your_recipes/presentation/pages/your_recipes.dart';
 import 'package:recipe_app/main.dart';
 
 import '../../features/auth/presentation/manager/auth_view_model.dart';
@@ -35,7 +37,7 @@ import 'routes.dart';
 
 final GoRouter router = GoRouter(
   navigatorKey: navigatorKey,
-  initialLocation: Routes.topChef,
+  initialLocation: Routes.homePage,
   //initialLocation: Routes.trendingRecipe,
   routes: [
     GoRoute(
@@ -161,7 +163,7 @@ final GoRouter router = GoRouter(
           reviewRepo: context.read(),
           recipeId: int.parse(state.pathParameters["recipeId"]!),
         ),
-         child: CreateReviewView(),
+        child: CreateReviewView(),
       ),
     ),
     GoRoute(
@@ -173,5 +175,14 @@ final GoRouter router = GoRouter(
         child: TrendingRecipeView(),
       ),
     ),
+    GoRoute(
+      path: Routes.yourRecipes,
+      builder: (context, state) => BlocProvider(
+        create: (context) => YourRecipesBloc(
+          repo: context.read(),
+        ),
+        child: YourRecipes(),
+      ),
+    )
   ],
 );
