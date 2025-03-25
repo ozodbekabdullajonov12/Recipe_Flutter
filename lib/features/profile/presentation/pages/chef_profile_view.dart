@@ -30,7 +30,7 @@ class ChefProfileView extends StatelessWidget {
       backgroundColor: AppColors.beigeColor,
       appBar: ChefProfileAppBar(
         backTap: () {
-          context.go(Routes.homePage);
+          context.pop();
         },
         action1Tap: () {},
         action2Tap: () {},
@@ -104,24 +104,26 @@ class ChefProfileView extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 10,),
-                   TabBarView(
-                        children: [
-                          GridView.builder(
-                            padding: EdgeInsets.symmetric(horizontal: 20),
-                            itemCount: vm.recipes.length,
-                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                              mainAxisSpacing: 20,
-                              crossAxisSpacing: 20,
-                              childAspectRatio: 170.w / 226.h,
-                              crossAxisCount: 2,
+                   SizedBox(
+                     height: 800.h,
+                     child: TabBarView(
+                          children: [
+                            GridView.builder(
+                              itemCount: vm.recipes.length,
+                              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                                mainAxisSpacing: 20,
+                                crossAxisSpacing: 20,
+                                childAspectRatio: 170.w / 226.h,
+                                crossAxisCount: 2,
+                              ),
+                              itemBuilder: (context, index) {
+                                return RecipeSmall(
+                                  recipeSmallModel: vm.recipes[index],
+                                );
+                              },
                             ),
-                            itemBuilder: (context, index) {
-                              return RecipeSmall(
-                                recipeSmallModel: vm.recipes[index],
-                              );
-                            },
-                          ),
-                        ]),
+                          ]),
+                   ),
                 ],
               ),
             )

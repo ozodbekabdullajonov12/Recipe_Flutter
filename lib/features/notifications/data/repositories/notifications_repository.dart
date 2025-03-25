@@ -5,9 +5,7 @@ class NotificationsRepository{
   final ApiClient client;
 
   List<NotificationsModel> notification = [];
-  NotificationsRepository({
-    required this.client,
-});
+  NotificationsRepository({required this.client});
   Future<List<NotificationsModel>>fetchRecipeNotification()async{
     var rawNotification = await client.genericGetRequest<List<dynamic>>('/notifications/list');
     notification = rawNotification.map((notification)=>NotificationsModel.fromJson(notification)).toList();
