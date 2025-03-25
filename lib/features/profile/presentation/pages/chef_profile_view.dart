@@ -104,28 +104,24 @@ class ChefProfileView extends StatelessWidget {
                     ],
                   ),
                   SizedBox(height: 10,),
-                  SizedBox(
-                    height: 800.h,
-                    child: ListView.separated(
-                      clipBehavior: Clip.none,
-                      itemCount: 4,
-                      separatorBuilder: (context, index) => SizedBox(
-                        height: 40,
-                      ),
-                      itemBuilder: (context, index) => UserRecipesCategory(
-                        id: 1,
-                        image: "https://s3-alpha-sig.figma.com/img/4da3/a1f9/1"
-                            "7ea214cd60e5b3e274372cafcb56b55?Expires=1743379200&Ke"
-                            "y-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=ZXo68PiGzzNBW6"
-                            "O6fE8ts6ep~rGSGcC6~7w~Gxv8lj7pJvLn70DWd-CuBb8L59qDoUXaVnri"
-                            "sM1chz5qg2kbMgMBHU1S3fdr0-E~SF5B45-Jgk1wyVmR8tfMBLs7hWYX5HtBOc"
-                            "aa88xD9usGKNn9v1GfS8q4Tg6z5PvwXEiwdHw4tVTTwaUlLkUWJM7C~yJCBF"
-                            "QwvBtOnBg6rz85GEhH5dQlnysLumDgKYZyIb7rQ5mdw37lVGNPUE4OLgaZd2"
-                            "96gaBVN2ofK~mO7oc0LPAnoTsEzDBPU8b5atGNB8hiqa74qfg0NjEFcoIgv4H"
-                            "li8yn9E3ELcviIsOQYnQE8RMBtg__",
-                        title: "maknun bilan yasha",
-                      ),
-                    ),),
+                   TabBarView(
+                        children: [
+                          GridView.builder(
+                            padding: EdgeInsets.symmetric(horizontal: 20),
+                            itemCount: vm.recipes.length,
+                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              mainAxisSpacing: 20,
+                              crossAxisSpacing: 20,
+                              childAspectRatio: 170.w / 226.h,
+                              crossAxisCount: 2,
+                            ),
+                            itemBuilder: (context, index) {
+                              return RecipeSmall(
+                                recipeSmallModel: vm.recipes[index],
+                              );
+                            },
+                          ),
+                        ]),
                 ],
               ),
             )
