@@ -4,6 +4,11 @@ import 'package:recipe_app/features/notifications/data/models/notifications_mode
 class NotificationsRepository{
   final ApiClient client;
 
+  List<NotificationsModel>? notification;
+  NotificationsRepository({
+    required this.client,
+});
+  Future<List<NotificationsModel>?>fetchRecipeNotification()async{
   List<NotificationsModel> notification = [];
   NotificationsRepository({required this.client});
   Future<List<NotificationsModel>>fetchRecipeNotification()async{

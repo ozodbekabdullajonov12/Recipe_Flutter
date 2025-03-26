@@ -1,8 +1,6 @@
-part of "notifications_bloc.dart";
-
-
+part of "notification_bloc.dart";
 sealed class NotificationEvent{}
-
 class NotificationLoading extends NotificationEvent {
   NotificationLoading();
 }
+

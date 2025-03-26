@@ -5,6 +5,8 @@ import 'package:recipe_app/features/community/presentation/manager/community_vie
 import 'package:recipe_app/features/community/presentation/pages/community_view.dart';
 import 'package:recipe_app/features/home_page/presentation/manager/home_page_view_model.dart';
 import 'package:recipe_app/features/home_page/presentation/pages/home_page.dart';
+import 'package:recipe_app/features/notifications/presentation/manager/notification_bloc.dart';
+import 'package:recipe_app/features/notifications/presentation/pages/notifications_view.dart';
 import 'package:recipe_app/features/profile/presentation/manager/chef_profile_view_model.dart';
 import 'package:recipe_app/features/profile/presentation/manager/me_profile_view_model.dart';
 import 'package:recipe_app/features/profile/presentation/pages/chef_profile_view.dart';
@@ -17,7 +19,6 @@ import 'package:recipe_app/features/reviews/presentation/pages/reviews_page.dart
 import 'package:recipe_app/features/your_recipes/presentation/manager/your_recipes_bloc.dart';
 import 'package:recipe_app/features/your_recipes/presentation/pages/your_recipes.dart';
 import 'package:recipe_app/main.dart';
-
 import '../../features/auth/presentation/manager/auth_view_model.dart';
 import '../../features/auth/presentation/pages/auth_page.dart';
 import '../../features/auth/presentation/pages/signUpView.dart';
@@ -37,8 +38,10 @@ import 'routes.dart';
 
 final GoRouter router = GoRouter(
   navigatorKey: navigatorKey,
-  initialLocation: Routes.homePage,
+  //initialLocation: Routes.topChef,
   //initialLocation: Routes.trendingRecipe,
+  //initialLocation: Routes.notifications,
+  initialLocation: Routes.homePage,
   routes: [
     GoRoute(
       path: Routes.onboarding,
