@@ -4,11 +4,11 @@ import 'package:recipe_app/features/notifications/data/models/notifications_mode
 class NotificationsRepository{
   final ApiClient client;
 
-  List<NotificationsModel> notification = [];
+  List<NotificationsModel>? notification;
   NotificationsRepository({
     required this.client,
 });
-  Future<List<NotificationsModel>>fetchRecipeNotification()async{
+  Future<List<NotificationsModel>?>fetchRecipeNotification()async{
     var rawNotification = await client.genericGetRequest<List<dynamic>>('/notifications/list');
     notification = rawNotification.map((notification)=>NotificationsModel.fromJson(notification)).toList();
     return notification;
