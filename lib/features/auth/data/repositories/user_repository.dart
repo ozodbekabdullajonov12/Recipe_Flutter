@@ -45,7 +45,6 @@ class UserRepository {
   List<HomeChefModel> homeChefs=[];
 
   Future<UserModel> fetchChefProfileById(int userId) async {
-    if (chefProfile != null) return chefProfile!;
     var rawUser = await client.fetchChefProfileById(userId);
     chefProfile = UserModel.fromJson(rawUser);
     return chefProfile!;

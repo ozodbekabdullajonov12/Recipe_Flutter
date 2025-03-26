@@ -1,35 +1,32 @@
-import 'package:equatable/equatable.dart';
-import 'package:flutter/cupertino.dart';
-import 'package:recipe_app/features/notifications/data/models/notifications_model.dart';
 
-enum NotificationsStatus { idle, loading, error }
+import '../../data/models/notifications_model.dart';
 
-@immutable
-class NotificationsState extends Equatable {
-  final NotificationsStatus status;
+enum NotificationStatus{idle, loading, error, success}
+
+class NotificationsState extends Equatable{
   final List<NotificationsModel>? notification;
+  final NotificationStatus notificationStatus;
 
   const NotificationsState({
-    required this.status,
     required this.notification,
+    required this.notificationStatus
   });
-
-  NotificationsState copyWith({
-    NotificationsStatus? status,
-    List<NotificationsModel>? notifications,
-  }) {
+  factory NotificationsState.initial(){
     return NotificationsState(
-        status: status ?? this.status,
-        notification: notification ?? this.notification);
-  }
-
-  @override
-  List<Object> get props => [status, notification!];
-
-  factory NotificationsState.initial()  {
-    return const NotificationsState(
-      status: NotificationsStatus.loading,
-      notification: [],
+        notification: null,
+        notificationStatus: NotificationStatus.loading
     );
   }
+  NotificationsState copyWith({
+    List<NotificationsModel>? notification,
+    NotificationStatus? notificationStatus
+  }){
+    return NotificationsState(
+        notification: notification ?? this.notification,
+        notificationStatus: notificationStatus ?? this.notificationStatus
+    );
+  }
+  @override
+  List<Object> get props => [notification!, notificationStatus];
 }
+

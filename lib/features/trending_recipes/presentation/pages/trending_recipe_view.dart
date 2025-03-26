@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:recipe_app/core/presentation/widgets/RecipeFlutterAppbar.dart';
+import 'package:recipe_app/core/presentation/widgets/recipe_flutter_app_bar.dart';
 import 'package:recipe_app/features/trending_recipes/presentation/pages/trending_recipe_most_viewed_widget.dart';
 import 'package:recipe_app/features/trending_recipes/presentation/pages/trending_recipes_widget.dart';
 import '../../../../core/presentation/widgets/recipe_app_bar.dart';

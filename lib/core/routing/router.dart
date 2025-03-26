@@ -16,8 +16,9 @@ import 'package:recipe_app/features/reviews/presentation/manager/create_review_b
 import 'package:recipe_app/features/reviews/presentation/manager/reviews_bloc.dart';
 import 'package:recipe_app/features/reviews/presentation/pages/create_review_view.dart';
 import 'package:recipe_app/features/reviews/presentation/pages/reviews_page.dart';
+import 'package:recipe_app/features/your_recipes/presentation/manager/your_recipes_bloc.dart';
+import 'package:recipe_app/features/your_recipes/presentation/pages/your_recipes.dart';
 import 'package:recipe_app/main.dart';
-
 import '../../features/auth/presentation/manager/auth_view_model.dart';
 import '../../features/auth/presentation/pages/auth_page.dart';
 import '../../features/auth/presentation/pages/signUpView.dart';
@@ -165,7 +166,7 @@ final GoRouter router = GoRouter(
           reviewRepo: context.read(),
           recipeId: int.parse(state.pathParameters["recipeId"]!),
         ),
-         child: CreateReviewView(),
+        child: CreateReviewView(),
       ),
     ),
     GoRoute(
@@ -178,13 +179,13 @@ final GoRouter router = GoRouter(
       ),
     ),
     GoRoute(
-      path: Routes.notifications,
+      path: Routes.yourRecipes,
       builder: (context, state) => BlocProvider(
-        create: (context) => NotificationsBloc(
+        create: (context) => YourRecipesBloc(
           repo: context.read(),
         ),
-        child: NotificationsView(),
+        child: YourRecipes(),
       ),
-    ),
+    )
   ],
 );
