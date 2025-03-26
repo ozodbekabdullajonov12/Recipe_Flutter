@@ -76,9 +76,9 @@ final GoRouter router = GoRouter(
     GoRoute(
         path: Routes.welcome,
         builder: (context, state) => OnboardingWelcome(
-              viewModel: OnboardingViewModel(
-                  repo: context.read(), cateRepo: context.read()),
-            )),
+          viewModel: OnboardingViewModel(
+              repo: context.read(), cateRepo: context.read()),
+        )),
     GoRoute(
       path: Routes.categories,
       builder: (context, state) => BlocProvider(
