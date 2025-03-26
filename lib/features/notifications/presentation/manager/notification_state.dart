@@ -3,30 +3,30 @@ import '../../data/models/notifications_model.dart';
 
 enum NotificationStatus{idle, loading, error, success}
 
-class NotificationState extends Equatable{
+class NotificationsState extends Equatable{
   final List<NotificationsModel>? notification;
   final NotificationStatus notificationStatus;
 
-  const NotificationState({
+  const NotificationsState({
     required this.notification,
     required this.notificationStatus
   });
-  factory NotificationState.initial(){
-    return NotificationState(
+  factory NotificationsState.initial(){
+    return NotificationsState(
         notification: null,
         notificationStatus: NotificationStatus.loading
     );
   }
-  NotificationState copyWith({
+  NotificationsState copyWith({
     List<NotificationsModel>? notification,
     NotificationStatus? notificationStatus
   }){
-    return NotificationState(
+    return NotificationsState(
         notification: notification ?? this.notification,
         notificationStatus: notificationStatus ?? this.notificationStatus
     );
   }
   @override
-  List<Object> get props => [notification, notificationStatus];
+  List<Object> get props => [notification!, notificationStatus];
 }
 

@@ -9,7 +9,7 @@ import 'package:recipe_app/features/reviews/data/models/create_review_model.dart
 
 class ApiClient {
   ApiClient() {
-    dio = Dio(BaseOptions(baseUrl: "http://10.10.0.166:8888/api/v1", validateStatus: (value)=>true));
+    dio = Dio(BaseOptions(baseUrl: "http://10.10.0.125:8888/api/v1", validateStatus: (value)=>true));
     dio.interceptors.add(AuthInterceptor());
   }
 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:recipe_app/core/presentation/widgets/RecipeFlutterAppbar.dart';
+import 'package:recipe_app/core/presentation/widgets/recipe_flutter_app_bar.dart';
 import 'package:recipe_app/features/top_chef/presentation/pages/top_chefs_item.dart';
 import '../../../../core/presentation/widgets/recipe_bottom_bar.dart';
 import '../../../../core/presentation/widgets/recipe_icon_button_container.dart';
@@ -73,7 +73,6 @@ class TopChefsView extends StatelessWidget {
               height: 285.h,
               padding: EdgeInsets.symmetric(horizontal: 36.w, vertical: 9.h),
               decoration: BoxDecoration(
-                color: AppColors.redPinkMain,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
@@ -87,7 +86,7 @@ class TopChefsView extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(height: 10,),
+                  SizedBox(height: 13,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -102,7 +101,6 @@ class TopChefsView extends StatelessWidget {
               height: 285.h,
               padding: EdgeInsets.symmetric(horizontal: 36.w, vertical: 9.h),
               decoration: BoxDecoration(
-                color: AppColors.redPinkMain,
                 borderRadius: BorderRadius.circular(20),
               ),
               child: Column(
@@ -116,6 +114,7 @@ class TopChefsView extends StatelessWidget {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
+                  SizedBox(height: 13,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
