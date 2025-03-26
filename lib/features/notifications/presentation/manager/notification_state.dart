@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+
 import '../../data/models/notifications_model.dart';
 
 enum NotificationStatus{idle, loading, error, success}
