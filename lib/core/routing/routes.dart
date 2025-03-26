@@ -15,6 +15,7 @@ class Routes {
   static const String topChef = '/top-chef';
   static const String trendingRecipe = '/trending-recipe';
   static const String notifications = '/notifications';
+  static const String yourRecipes="/your-recipes";
   static String chefProfileBuilder(int id) => "/user/$id";
 
   static String recipeBuilder(int id, [String? title]) => "/recipe/$id";

@@ -39,7 +39,8 @@ final GoRouter router = GoRouter(
   navigatorKey: navigatorKey,
   //initialLocation: Routes.topChef,
   //initialLocation: Routes.trendingRecipe,
-  initialLocation: Routes.notifications,
+  //initialLocation: Routes.notifications,
+  initialLocation: Routes.homePage,
   routes: [
     GoRoute(
       path: Routes.onboarding,
