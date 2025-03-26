@@ -5,7 +5,6 @@ import 'package:recipe_app/features/community/presentation/manager/community_vie
 import 'package:recipe_app/features/community/presentation/pages/community_view.dart';
 import 'package:recipe_app/features/home_page/presentation/manager/home_page_view_model.dart';
 import 'package:recipe_app/features/home_page/presentation/pages/home_page.dart';
-import 'package:recipe_app/features/notifications/presentation/manager/notification_bloc.dart';
 import 'package:recipe_app/features/notifications/presentation/pages/notifications_view.dart';
 import 'package:recipe_app/features/profile/presentation/manager/chef_profile_view_model.dart';
 import 'package:recipe_app/features/profile/presentation/manager/me_profile_view_model.dart';
