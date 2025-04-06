@@ -8,6 +8,8 @@ import 'package:recipe_app/features/home_page/presentation/pages/home_page.dart'
 import 'package:recipe_app/features/profile/presentation/manager/chef_profile_view_model.dart';
 import 'package:recipe_app/features/profile/presentation/manager/me_profile_view_model.dart';
 import 'package:recipe_app/features/profile/presentation/pages/chef_profile_view.dart';
+import 'package:recipe_app/features/recipe_create/presentation/manager/recipe_create_bloc.dart';
+import 'package:recipe_app/features/recipe_create/presentation/pages/recipe_create_view.dart';
 import 'package:recipe_app/features/recipe_detail/presentation/manager/recipe_view_model.dart';
 import 'package:recipe_app/features/recipe_detail/presentation/pages/recipe_view.dart';
 import 'package:recipe_app/features/reviews/presentation/manager/create_review_bloc.dart';
@@ -39,7 +41,7 @@ final GoRouter router = GoRouter(
   //initialLocation: Routes.topChef,
   //initialLocation: Routes.trendingRecipe,
   //initialLocation: Routes.notifications,
-  initialLocation: Routes.homePage,
+  initialLocation: Routes.login,
   routes: [
     GoRoute(
       path: Routes.onboarding,
@@ -74,9 +76,9 @@ final GoRouter router = GoRouter(
     GoRoute(
         path: Routes.welcome,
         builder: (context, state) => OnboardingWelcome(
-          viewModel: OnboardingViewModel(
-              repo: context.read(), cateRepo: context.read()),
-        )),
+              viewModel: OnboardingViewModel(
+                  repo: context.read(), cateRepo: context.read()),
+            )),
     GoRoute(
       path: Routes.categories,
       builder: (context, state) => BlocProvider(
@@ -184,6 +186,13 @@ final GoRouter router = GoRouter(
         ),
         child: YourRecipes(),
       ),
-    )
+    ),
+    GoRoute(
+      path: Routes.recipeCreate,
+      builder: (context, state) => BlocProvider(
+        create: (context) => RecipeCreateBloc(),
+        child: RecipeCreateView(),
+      ),
+    ),
   ],
 );
