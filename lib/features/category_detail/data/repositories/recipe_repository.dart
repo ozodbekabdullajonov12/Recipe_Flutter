@@ -107,5 +107,4 @@ class RecipeRepository {
     var rawRecipe = await client.genericGetRequest<dynamic>('/recipes/trending-recipe');
     return TrendingRecipeModel.fromJson(rawRecipe);
   }
-
 }

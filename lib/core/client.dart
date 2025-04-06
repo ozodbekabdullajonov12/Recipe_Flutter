@@ -5,11 +5,14 @@ import 'package:recipe_app/core/Exceptions/auth_exception.dart';
 import 'package:recipe_app/core/interceptor.dart';
 import 'package:recipe_app/core/secure_storage.dart';
 import 'package:recipe_app/features/auth/data/models/sign_up_user_model.dart';
+import 'package:recipe_app/features/recipe_create/data/models/recipe_create_model.dart';
 import 'package:recipe_app/features/reviews/data/models/create_review_model.dart';
 
 class ApiClient {
   ApiClient() {
-    dio = Dio(BaseOptions(baseUrl: "http://10.10.0.125:8888/api/v1", validateStatus: (value)=>true));
+    dio = Dio(BaseOptions(
+        baseUrl: "http://192.168.0.101:8888/api/v1",
+        validateStatus: (value) => true));
     dio.interceptors.add(AuthInterceptor());
   }
 
@@ -158,7 +161,21 @@ class ApiClient {
       return response.data as T;
     } else {
       throw DioException(
-          requestOptions: response.requestOptions, response: response);
+          requestOptions: response.requestOptions, response: response, error: response.data);
+    }
+  }
+
+
+  Future<Map<String, dynamic>> createRecipe({required RecipeCreateModel recipe}) async {
+    try {
+      var response = await dio.post("/recipes/create", data: recipe.toJson());
+      if (response.statusCode == 201) {
+        return {"result": true, "message": "Recipe created successfully"};
+      } else {
+        return {"result": false, "message": "Failed to create recipe"};
+      }
+    } catch (e) {
+      rethrow;
     }
   }
 }

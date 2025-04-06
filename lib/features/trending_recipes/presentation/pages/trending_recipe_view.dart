@@ -11,19 +11,8 @@ import '../../data/models/trending_recipe_model.dart';
 import '../manager/trending_recipe_bloc.dart';
 import '../manager/trending_recipe_state.dart';
 
-class TrendingRecipeView extends StatefulWidget {
+class TrendingRecipeView extends StatelessWidget {
   const TrendingRecipeView({super.key});
-
-  @override
-  _TrendingRecipeViewState createState() => _TrendingRecipeViewState();
-}
-
-class _TrendingRecipeViewState extends State<TrendingRecipeView> {
-  @override
-  void initState() {
-    super.initState();
-    BlocProvider.of<TrendingRecipeBloc>(context).add(TrendingRecipeLoading());
-  }
 
   @override
   Widget build(BuildContext context) {
